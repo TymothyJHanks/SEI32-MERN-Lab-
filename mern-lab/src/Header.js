@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import "./Header.css";
 
 class Header extends Component {
     constructor(props){
@@ -7,7 +8,7 @@ class Header extends Component {
     }
     render(){
         return(
-            <div>
+            <div className="headerWrapper">
                 <header>This is Our Mern Lab</header>
             </div>
         )
