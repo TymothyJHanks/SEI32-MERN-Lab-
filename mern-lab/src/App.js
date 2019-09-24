@@ -1,26 +1,30 @@
-import React from 'react';
+//Importing Major Dependencies 
+import React, { Component } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { Route, Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//Importing Other Components
+import Search from "./Search"
+import Header from "./Header"
+
+
+
+
+
+class App extends Component {
+  render(){
+    return (
+      <div className="App">
+        <Header></Header>
+        <Search></Search>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+
+//Your going to create a component to add into the data 
