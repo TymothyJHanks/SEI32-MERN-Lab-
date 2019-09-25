@@ -1,6 +1,6 @@
 .AppWrapper {
   text-align: center;
-  padding: 20px
+  padding: 60px
 
 }
 
@@ -26,5 +26,9 @@
 .navBar{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.dontDisplayThis {
+  display: none;
 }

@@ -20,7 +20,7 @@ class Search extends Component {
     render(){
         return(
             <div>
-                <button onClick={this.handleSearchSubmit}>Search for all the data!</button>
+                <button onClick={this.state.ApiData}>Search for all the data!</button>
                 <p>{"the data goes here"}</p>
             </div>
         )

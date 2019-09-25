@@ -48,6 +48,11 @@ class App extends Component {
         {/* Routes to different components */}
         <Route path="/" exact component={Homepage}></Route>
         <Route path="/searchComponent" exact component={Search}></Route>
+
+        <div className="dontDisplayThis">
+        <Search ApiCall={this.handleSearchSubmit}></Search>
+        </div>
+        
       </div>
     );
   }
