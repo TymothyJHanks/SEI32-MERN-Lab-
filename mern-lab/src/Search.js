@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import "./Search.css";
 
 
 class Search extends Component {
@@ -7,22 +7,41 @@ class Search extends Component {
         super(props)
 
         this.state ={
-            ApiData: this.props.ApiCall
+            fetchDataJson: []
         }
-        //binding goes here example - this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
 
+        this.fetchData = this.fetchData.bind(this)
     }
-    //manipulating state functions goes here
 
-    //create a state function to map through the JSON data from the URL and print things
-    // MappingShit()
+    fetchData() {
+        fetch("https://mern-translate.herokuapp.com/")
+        .then(response => response.json())
+        .then(parsedJson => {
+          this.setState({
+            fetchDataJson: parsedJson
+          });
+        });
+    }
+ 
 
     render(){
+        console.log(this)
         return(
             <div>
-                <button onClick={this.state.ApiData}>Search for all the data!</button>
-                <p>{"the data goes here"}</p>
+            <button onClick={ this.fetchData }>Click me for data!</button>
+            <div className="searchWrapper">
+                {this.state.fetchDataJson.map((dataItem, index) => {
+                    return(
+                        <section key={index }>
+                            <h2>This is item: { index }</h2>
+                            <p>{dataItem.id}</p>
+                            <p>{dataItem.text}</p>
+                            <p>{dataItem.audioSource}</p>
+                        </section>
+                    );
+                })}
             </div>
+        </div>
         )
     }
 }
