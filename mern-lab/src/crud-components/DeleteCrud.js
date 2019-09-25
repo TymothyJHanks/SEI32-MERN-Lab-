@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 
-class Update extends Component {
+class Delete extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      translationData: "",
       audiosourceData: ""
     };
     this.fetchData = this.fetchData.bind(this);
@@ -14,19 +15,20 @@ class Update extends Component {
 
   handleChange(event) {
     this.setState({
-    //   translationData: event.target.value,
+      translationData: event.target.value,
       audiosourceData: event.target.value
     });
   }
 
   handleSubmit(e) {
-    alert("Updating Pew Pew!" +
+    alert("Deleting Pew Pew!" +
+    this.state.translationData +
     this.state.audiosourceData) 
     e.preventDefault();
   }
 
   fetchData() {
-    fetch("https://mern-translate.herokuapp.com/:audioSource")
+    fetch("https://mern-translate.herokuapp.com/delete/:text")
       .then(response => response.json())
     }
 
@@ -34,12 +36,12 @@ class Update extends Component {
     return (
       <div className="wrapper">
         <form onSubmit={this.handleSubmit}>
-          <h1>This is the Update Crud Method</h1>
+          <h1>This is the Delete Crud Method</h1>
           <input
             type="text"
-            value={this.state.audiosourceData}
+            value={this.state.translationData}
             onChange={this.handleChange}
-            placeholder="audioSource"
+            placeholder="translation"
           ></input>
           <input type="submit" value="Submit" />
         </form>
@@ -47,5 +49,4 @@ class Update extends Component {
     );
   }
 }
-export default Update;
-        
+export default Delete;

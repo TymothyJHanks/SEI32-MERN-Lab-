@@ -39,12 +39,14 @@ class Create extends Component {
           <h1>This is the Create Crud Method</h1>
           <input
             type="text"
-            translationData={this.state.translationData}
+            value={this.state.translationData}
+            onChange={this.handleChange}
             placeholder="translation"
           ></input>
           <input
             type="text"
-            audiosourceData={this.state.audiosourceData}
+            value={this.state.audiosourceData}
+            onChange={this.handleChange}
             placeholder="audiosoure"
           ></input>
           <input type="submit" value="Submit" />
