@@ -5,7 +5,7 @@ class Homepage extends Component {
     render(){
         return(
             <div className="homePageWrapper">
-                <h1>This is the homepage</h1>
+                <h1>This is the homepage Welcome</h1>
             </div>
         )
     }

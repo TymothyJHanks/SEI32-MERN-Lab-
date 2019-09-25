@@ -28,7 +28,7 @@ class Search extends Component {
         console.log(this)
         return(
             <div>
-            <button onClick={ this.fetchData }>Click me for data!</button>
+            <button className="clickBtn" onClick={ this.fetchData }>Click me for data!</button>
             <div className="searchWrapper">
                 {this.state.fetchDataJson.map((dataItem, index) => {
                     return(
