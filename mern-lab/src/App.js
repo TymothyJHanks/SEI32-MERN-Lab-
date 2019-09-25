@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="AppWrapper">
         <Header></Header>
         {/* Links to different components */}
         <nav className="navBar">
