@@ -5,7 +5,7 @@ class Header extends Component {
     render(){
         return(
             <div className="headerWrapper">
-                <header>This is Our Mern Lab</header>
+                <header>Yousef and Tym's MERN Lab</header>
             </div>
         )
     }

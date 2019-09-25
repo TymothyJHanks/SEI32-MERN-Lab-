@@ -34,7 +34,6 @@ class Search extends Component {
                     return(
                         <section key={index }>
                             <h2>This is item: { index }</h2>
-                            <p>{dataItem.id}</p>
                             <p>{dataItem.text}</p>
                             <p>{dataItem.audioSource}</p>
                         </section>
