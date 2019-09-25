@@ -9,8 +9,13 @@ class Search extends Component {
         this.state ={
             ApiData: this.props.ApiCall
         }
-    }
+        //binding goes here example - this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
 
+    }
+    //manipulating state functions goes here
+
+    //create a state function to map through the JSON data from the URL and print things
+    // MappingShit()
 
     render(){
         return(

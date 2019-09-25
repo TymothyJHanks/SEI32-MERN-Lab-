@@ -9,6 +9,7 @@ import axios from "axios";
 //Importing Other Components
 import Search from "./Search"
 import Header from "./Header"
+import Homepage from "./Homepage"
 
 
 const apiURL = "place Url here"
@@ -34,6 +35,9 @@ class App extends Component {
       .catch(err => {
         console.log(err);
       });
+
+      this.setState({})
+
   }
 //put in setState and routes and links
 
@@ -43,7 +47,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header></Header>
-        <Search ApiCall={this.handleSearchSubmit}></Search>
+        
+        <Link to="/">Homepage</Link>
+        <Route path="/" exact component={Homepage}></Route>
+
+        <Link to="/searchComponent">Search the data</Link>
+        <Route path="/searchComponent" exact component={Search}></Route>
       </div>
     );
   }
