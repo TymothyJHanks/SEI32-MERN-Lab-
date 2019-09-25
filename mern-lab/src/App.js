@@ -1,57 +1,52 @@
-//Importing Major Dependencies 
+//Importing Major Dependencies
 import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { Route, Link } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 import axios from "axios";
 
 //Importing Other Components
-import Search from "./Search"
-import Header from "./Header"
-import Homepage from "./Homepage"
+import Search from "./Search";
+import Header from "./Header";
+import Homepage from "./Homepage";
 
-
-const apiURL = "place Url here"
-
-
+const apiURL = "place Url here";
 
 class App extends Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
 
-    this.state = {
-
-    }
-    this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
+    this.state = {};
+    this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
   }
 
   handleSearchSubmit(e) {
     axios
       .get(`${apiURL}/api/mern-lab`)
       .then(response => {
-        "this is working"
+        "this is working";
       })
       .catch(err => {
         console.log(err);
       });
 
-      this.setState({})
-
+    this.setState({});
   }
-//put in setState and routes and links
+  //put in setState and routes and links
 
-
-
-  render(){
+  render() {
     return (
       <div className="App">
         <Header></Header>
-        
-        <Link to="/">Homepage</Link>
-        <Route path="/" exact component={Homepage}></Route>
+        {/* Links to different components */}
+        <nav className="navBar">
+          <Link to="/">Homepage</Link>
+          <Link to="/searchComponent">Search the data</Link>
+        </nav>
 
-        <Link to="/searchComponent">Search the data</Link>
+        {/* Routes to different components */}
+        <Route path="/" exact component={Homepage}></Route>
         <Route path="/searchComponent" exact component={Search}></Route>
       </div>
     );
@@ -60,5 +55,4 @@ class App extends Component {
 
 export default App;
 
-
-//Your going to create a component to add into the data 
+//Your going to create a component to add into the data
